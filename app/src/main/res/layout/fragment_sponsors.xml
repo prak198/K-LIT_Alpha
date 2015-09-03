@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sample_2"
+    android:paddingBottom="3dp"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
+    android:paddingTop="3dp"
+    tools:context="com.example.iidea8.k_lit.SponsorsActivity">
+
+    <GridView
+        android:id="@+id/gallery_grid_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:columnWidth="90dp"
+        android:fastScrollEnabled="true"
+        android:gravity="center"
+        android:horizontalSpacing="40dp"
+        android:numColumns="2"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:smoothScrollbar="true"
+        android:stretchMode="columnWidth"
+        android:verticalScrollbarPosition="defaultPosition"
+        android:verticalSpacing="40dp" />
+
+
+</RelativeLayout>

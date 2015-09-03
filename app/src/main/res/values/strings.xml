@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">K-LIT</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+        <string name="desc_mini">KLF will be a literary festival unlike any other; one that will raise the bar and set high standards for the long-term benefit of the literary field; one that will be looked upon as an institution in itself.
+                            Set out in the following paragraphs is its key aims and aspirations.</string>
+    <string name="home">Home</string>
+    <string name="itinerary">Itinerary</string>
+    <string name="speakers">Speakers</string>
+    <string name="overview">Overview Of The Day</string>
+    <string name="question">Question</string>
+    <string name="picture">Picture Gallery</string>
+    <string name="sponsors">Sponsors</string>
+    <string name="facebook_app_id">106202256400127</string>
+
+    <string name="speak1_name">Abha Iyengar</string>
+    <string name="speak2_name">Aditya Bal</string>
+    <string name="speak3_name">Advaita Kala</string>
+    <string name="speak4_name">Ajay Jain</string>
+    <string name="speak5_name">Akshay Manwani</string>
+    <string name="speak6_name">Alka Pande</string>
+    <string name="speak7_name">Ameena Saiyid</string>
+    <string name="speak8_name">Amit Shankar</string>
+    <string name="speak9_name">Aanchal Malhotra</string>
+    <string name="speak10_name">Anuja Chauhan</string>
+
+
+
+    <!--<string name="speaker1_abha">An internationally published author, poet and British Council certified creative writing facilitator.Her poems have appeared in the Anthology of Contemporary Indian Poets and her fiction in The Indo-Australian Anthology of Short Fiction. </string>-->
+
+    <!--<string name="speaker2_aditya">A model/actor turned Chef, Aditya is one of the most recognized faces and has hosted slew ofsuccessful shows for the NDTV Goodtimes. He is finishing his first book on food and working on new show for the Epic Channel.</string>-->
+    <!--<string name="speaker3_advaita">A critical and commercial success, Advaita shot to fame with her witty classic, Almost Single.A hotelier by profession she is also the literary brain behind Sujoy Gosh’s much acclaimed Kahani.-->
+                                        <!--</string>-->
+    <!--<string name="speaker4_ajay_jain">An avid traveller, writer and owner of the Kuzum Café, in Hauz Khas Village,a travellars’s adda to share and converse travel tales over complimentary coffee and cookies.</string>-->
+    <!--<string name="speaker5_akshay_manwani">Having chucked away the corporate life, Akshay found his calling in literature.His first book Sahir Ludhianivi: A People’s Poet, was published by Harper Collins in 2013,and he is currently working on his third book on Nasir Hussain.</string>-->
+    <!--<string name="speaker6_alka_bio">Dr Pande is currently a Consultant Arts Advisor and Curator of the Visual Arts Gallery,India Habitat Centre. She has authored several well-acclaimed books, with a strong focus on Indian arts and ancient Indian erotic literature and aesthetics.</string>-->
+    <!--<string name="speaker7_ameena">She is the managing director of Oxford University Press in Pakistan and the founder of Karachi Literature Festival and Islamabad Literature Festival. In 2010, she became the first woman to be elected president of the 150-year-old Overseas Investors Chamber of Commerce and Industry (OICCI).</string>-->
+    <!--<string name="speaker8_amit">He has authored 4 national best sellers; Flight of the Hilsa, Chapter 11, Love is Vodka-A Shot Ain’t Enough and Café Latte. A coffee addict, an avid music buff and a great exponent of guitar, his genre includes rock, blues and jazz.</string>-->
+    <!--<string name="speaker9_aanchal">She is a multimedia artist whose works explore the written word, photographic imagery and traditional printmaking. She is currently working on a project entitled, 'Remnants of a Separation' - a study of the material remains of the Partition of the Indian Subcontinent in 1947.-->
+<!--</string>-->
+    <!--<string name="speaker10_anuja">She is often described as 'the best writer of the Indian commercial fiction genre".As a writer, she is best known for her best-selling contemporary '"rom-com" novels, The Zoya Factor, Battle For Bittora, Those Pricey Thakur Girls and The House That BJ Built.-->
+<!--</string>-->
+
+</resources>
