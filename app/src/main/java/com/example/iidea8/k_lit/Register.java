@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
@@ -28,14 +31,14 @@ import java.util.ArrayList;
  * Created by Abhigyan on 8/5/2015.
  */
 public class Register extends Activity{
+    public static final int CONNECTION_TIMEOUT = 1000 * 15;
+    public static final String SERVER_ADDRESS = "http://iidea8.webuda.com/services/";
+    ProgressDialog progressDialog;
+    Context context;
     private EditText etName;
     private EditText etEmail;
     private EditText etPassword;
     private EditText etContact;
-    ProgressDialog progressDialog;
-    public static final int CONNECTION_TIMEOUT = 1000 * 15;
-    public static final String SERVER_ADDRESS = "http://iidea8.webuda.com/services/";
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +81,9 @@ public class Register extends Activity{
             new storeUserDataAsync(newUser).execute();
         Intent intent = new Intent(Register.this, LoginActivity.class);
         startActivity(intent);
-        Toast.makeText(Register.this, "Successfully Registered. Please Login To Continue..", Toast.LENGTH_LONG)
-                .show();
+//        Toast.makeText(Register.this, "Successfully Registered. Please Login To Continue..", Toast.LENGTH_LONG)
+//                .show();
+            toast();
         finish();
         }
     }
@@ -89,6 +93,26 @@ public class Register extends Activity{
         startActivity(new Intent(Register.this, LoginActivity.class));
         finish();
         }
+
+    public void toast() {
+
+
+        //get the LayoutInflater and inflate the custom_toast layout
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
+                findViewById(R.id.toast_layout_root));
+
+        //get the TextView from the custom_toast layout
+        TextView text = (TextView) layout.findViewById(R.id.toastText);
+        text.setText("Successfully Registered. Please Login To Continue..");
+
+        //create the toast object, set display duration,
+        //set the view as layout that's inflated above and then call show()
+        Toast t = new Toast(getApplicationContext());
+        t.setDuration(Toast.LENGTH_LONG);
+        t.setView(layout);
+        t.show();
+    }
 
     public class storeUserDataAsync extends AsyncTask<Void, Void, Void> {
 

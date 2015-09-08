@@ -22,12 +22,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class DrawerActivity extends ActionBarActivity {
 
 
+    GoogleApiClient mGoogleApiClient;
     private ListView mListView;
     private String[] mListItems;
     private DrawerLayout mdrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence getActivity;
-    GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +131,14 @@ public class DrawerActivity extends ActionBarActivity {
 
 
 
+    public void more(View view) {
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.frame_layout, new forwardmore()).addToBackStack("more").commit();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);}
+
+
     public void onClick_day1(View view) {
 
         getFragmentManager().beginTransaction()
@@ -139,7 +147,14 @@ public class DrawerActivity extends ActionBarActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
     }
+    public void tips(View view) {
 
+        getFragmentManager().beginTransaction()
+                .replace(R.id.frame_layout, new traveltips()).addToBackStack("iti1").commit();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+    }
     public void onClick_day2(View view) {
         getFragmentManager().beginTransaction()
                 .replace(R.id.frame_layout, new ItineraryDay2()).addToBackStack("iti2").commit();
@@ -201,8 +216,13 @@ public class DrawerActivity extends ActionBarActivity {
 
                 case 5:
                     getFragmentManager().beginTransaction()
-                            .replace(R.id.frame_layout, new Gallery()).addToBackStack("gal").commit();
+                            .replace(R.id.frame_layout, new GridViewActivity()).addToBackStack("gal").commit();
                     break;
+//                    Intent intent2 = new Intent(DrawerActivity.this, GridViewActivity.class);
+//                    startActivity(intent2);
+
+
+
 
                 case 6:
                     getFragmentManager().beginTransaction()

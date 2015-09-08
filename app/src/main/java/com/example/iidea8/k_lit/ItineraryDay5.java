@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -33,8 +34,9 @@ public class ItineraryDay5 extends Fragment {
         //CHECK NET TOAST @PRAKASH
         if (!isNetworkOnline()==true)
         {
-            Toast.makeText(getActivity(), "No Network Connection For Feeds",
-                    Toast.LENGTH_LONG).show();
+//            Toast.makeText(getActivity(), "No Network Connection For Feeds",
+//                    Toast.LENGTH_LONG).show();
+            toast();
             ProgressBar pb = (ProgressBar) view.findViewById(R.id.day5_progressBar);
 
             pb.setVisibility(View.INVISIBLE);
@@ -44,6 +46,53 @@ public class ItineraryDay5 extends Fragment {
         }
         setRetainInstance(true);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MyApplication.getInstance().trackScreenView("Itinerary Day 5");
+    }
+
+    //CHECK NET METHOD @PRAKASH
+    public boolean isNetworkOnline() {
+        boolean status = false;
+        try {
+            ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo = cm.getNetworkInfo(0);
+            if (netInfo != null && netInfo.getState() == NetworkInfo.State.CONNECTED) {
+                status = true;
+            } else {
+                netInfo = cm.getNetworkInfo(1);
+                if (netInfo != null && netInfo.getState() == NetworkInfo.State.CONNECTED)
+                    status = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return status;
+
+    }
+
+    public void toast() {
+
+
+        //get the LayoutInflater and inflate the custom_toast layout
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
+                view.findViewById(R.id.toast_layout_root));
+
+        //get the TextView from the custom_toast layout
+        TextView text = (TextView) layout.findViewById(R.id.toastText);
+        text.setText("No Network Connection");
+
+        //create the toast object, set display duration,
+        //set the view as layout that's inflated above and then call show()
+        Toast t = new Toast(getActivity());
+        t.setDuration(Toast.LENGTH_LONG);
+        t.setView(layout);
+        t.show();
     }
 
     public class Day5Async extends AsyncTask<String, Void, ArrayList<DaysGnS>> {
@@ -149,32 +198,6 @@ public class ItineraryDay5 extends Fragment {
             pb.setVisibility(View.INVISIBLE);
             super.onPostExecute(result);
         }
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        MyApplication.getInstance().trackScreenView("Itinerary Day 5");
-    }
-
-    //CHECK NET METHOD @PRAKASH
-    public boolean isNetworkOnline() {
-        boolean status=false;
-        try{
-            ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo netInfo = cm.getNetworkInfo(0);
-            if (netInfo != null && netInfo.getState()==NetworkInfo.State.CONNECTED) {
-                status= true;
-            }else {
-                netInfo = cm.getNetworkInfo(1);
-                if(netInfo!=null && netInfo.getState()== NetworkInfo.State.CONNECTED)
-                    status= true;
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-            return false;
-        }
-        return status;
-
     }
 }
 

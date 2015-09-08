@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -34,8 +35,9 @@ public class ItineraryDay3 extends Fragment {
         //CHECK NET TOAST @PRAKASH
         if (!isNetworkOnline()==true)
         {
-            Toast.makeText(getActivity(), "No Network Connection For Feeds",
-                    Toast.LENGTH_LONG).show();
+//            Toast.makeText(getActivity(), "No Network Connection For Feeds",
+//                    Toast.LENGTH_LONG).show();
+            toast();
             ProgressBar pb = (ProgressBar) view.findViewById(R.id.day3_progressBar);
 
             pb.setVisibility(View.INVISIBLE);
@@ -45,6 +47,53 @@ public class ItineraryDay3 extends Fragment {
         }
         setRetainInstance(true);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MyApplication.getInstance().trackScreenView("Itinerary Day 3");
+    }
+
+    //CHECK NET METHOD @PRAKASH
+    public boolean isNetworkOnline() {
+        boolean status = false;
+        try {
+            ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo = cm.getNetworkInfo(0);
+            if (netInfo != null && netInfo.getState() == NetworkInfo.State.CONNECTED) {
+                status = true;
+            } else {
+                netInfo = cm.getNetworkInfo(1);
+                if (netInfo != null && netInfo.getState() == NetworkInfo.State.CONNECTED)
+                    status = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return status;
+
+    }
+
+    public void toast() {
+
+
+        //get the LayoutInflater and inflate the custom_toast layout
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
+                view.findViewById(R.id.toast_layout_root));
+
+        //get the TextView from the custom_toast layout
+        TextView text = (TextView) layout.findViewById(R.id.toastText);
+        text.setText("No Network Connection");
+
+        //create the toast object, set display duration,
+        //set the view as layout that's inflated above and then call show()
+        Toast t = new Toast(getActivity());
+        t.setDuration(Toast.LENGTH_LONG);
+        t.setView(layout);
+        t.show();
     }
 
     public class Day3Async extends AsyncTask<String, Void, ArrayList<DaysGnS>> {
@@ -57,12 +106,13 @@ public class ItineraryDay3 extends Fragment {
             pb.setVisibility(View.VISIBLE);
             super.onPreExecute();
         }
+
         @Override
         protected ArrayList<DaysGnS> doInBackground(String... params) {
             JSONArray rootArray = HttpManager.getData(params[0]);
             DaysGnS daysGnS = null;
 
-            for (int i=0;i<rootArray.length();i++){
+            for (int i = 0; i < rootArray.length(); i++) {
                 try {
                     JSONObject rootObjects = rootArray.getJSONObject(i);
                     String eventName = rootObjects.getString("event_Name");
@@ -78,7 +128,7 @@ public class ItineraryDay3 extends Fragment {
                     StringBuilder moderatedBy = new StringBuilder();
                     StringBuilder curatedBy = new StringBuilder();
 
-                    for (int m=0; m<moderaterArray.length();m++){
+                    for (int m = 0; m < moderaterArray.length(); m++) {
                         JSONObject moderaterObjects = moderaterArray.getJSONObject(m);
                         String moderaterFirstName = moderaterObjects.getString("Moderator_name");
                         String moderaterLastName = moderaterObjects.getString("Moderator_last_name");
@@ -86,15 +136,15 @@ public class ItineraryDay3 extends Fragment {
                                 .append(moderaterLastName).append("  ");
                         moderatedBy.delete(0, 13);
 
-                        if(moderaterFirstName.equals("")){
+                        if (moderaterFirstName.equals("")) {
                             moderatedBy.append("");
 
-                        } else{
+                        } else {
                             moderatedBy.append("Moderated By: ");
                         }
                     }
 
-                    for (int c=0; c<curaterArray.length();c++){
+                    for (int c = 0; c < curaterArray.length(); c++) {
                         JSONObject curaterObjects = curaterArray.getJSONObject(c);
                         String curaterFirstName = curaterObjects.getString("curator_name");
                         String curaterLastName = curaterObjects.getString("curator_last_name");
@@ -102,24 +152,24 @@ public class ItineraryDay3 extends Fragment {
                                 .append(" ").append(curaterLastName).append("  ");
                         curatedBy.delete(0, 13);
 
-                        if(curaterFirstName.equals("")){
+                        if (curaterFirstName.equals("")) {
                             curatedBy.append("");
 
-                        } else{
+                        } else {
                             curatedBy.append("Curated By: ");
                         }
                     }
 
-                    for (int k=0;k<speakerArray.length();k++){
+                    for (int k = 0; k < speakerArray.length(); k++) {
                         JSONObject speakerObjects = speakerArray.getJSONObject(k);
                         String speakerFirstName = speakerObjects.getString("SPEAKER_NAME");
                         String speakerLastName = speakerObjects.getString("SPEAKER_LAST_NAME");
                         String speakerProf = speakerObjects.getString("SPEAKER_PROFILE");
-                        if (speakerFirstName.equals("")){
+                        if (speakerFirstName.equals("")) {
                             String speakerProfile = (" " + speakerProf);
                             speakerStringBuilder.append("").append(speakerFirstName).append(" ").append(speakerLastName)
                                     .append(speakerProfile).append("");
-                        }else {
+                        } else {
                             String speakerProfile = (", " + speakerProf);
                             speakerStringBuilder.append("\n").append(speakerFirstName).append(" ").append(speakerLastName)
                                     .append(speakerProfile).append("\n");
@@ -143,37 +193,11 @@ public class ItineraryDay3 extends Fragment {
         @Override
         protected void onPostExecute(ArrayList<DaysGnS> result) {
             ListView listViewDay1 = (ListView) view.findViewById(R.id.list_view_day1);
-            DaysAdapter daysAdapter = new DaysAdapter(getActivity().getBaseContext(),result);
+            DaysAdapter daysAdapter = new DaysAdapter(getActivity().getBaseContext(), result);
             listViewDay1.setAdapter(daysAdapter);
             pb.setVisibility(View.INVISIBLE);
             super.onPostExecute(result);
         }
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        MyApplication.getInstance().trackScreenView("Itinerary Day 3");
-    }
-
-    //CHECK NET METHOD @PRAKASH
-    public boolean isNetworkOnline() {
-        boolean status=false;
-        try{
-            ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo netInfo = cm.getNetworkInfo(0);
-            if (netInfo != null && netInfo.getState()==NetworkInfo.State.CONNECTED) {
-                status= true;
-            }else {
-                netInfo = cm.getNetworkInfo(1);
-                if(netInfo!=null && netInfo.getState()== NetworkInfo.State.CONNECTED)
-                    status= true;
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-            return false;
-        }
-        return status;
-
     }
 }
 

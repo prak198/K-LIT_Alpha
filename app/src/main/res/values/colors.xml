@@ -10,4 +10,6 @@
     <color name="dark_grey">#191a1c</color>
     <color name="dark_grey_transparent">#cc191a1c</color>
     <color name="black_transparent">#000</color>
+    <color name="blue">#00abea</color>
+
 </resources>

@@ -21,7 +21,7 @@ public class Contest extends Fragment implements ContestResponse {
     View view;
     ContestsGnS contestsGnS;
     ContestsGnS newContestsGnS;
-   public static final int CONNECTION_TIMEOUT = 1000 * 15;
+    public static final int CONNECTION_TIMEOUT = 1000 * 15;
     public static final String SERVER_ADDRESS = "http://iidea8.webuda.com/services/";
     private RadioButton optA;
     private RadioButton optB;

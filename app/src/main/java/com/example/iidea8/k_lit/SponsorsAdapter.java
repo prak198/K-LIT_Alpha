@@ -12,8 +12,6 @@ import android.widget.ImageView;
  * Created by Abhigyan on 8/13/2015.
  */
 public class SponsorsAdapter extends BaseAdapter {
-    private Context mContext;
-
     // Keep all Images in array
     public Integer[] mGallery = {
             R.mipmap.sponsors_uttarakhand, R.mipmap.sponsors_abbotsford,
@@ -33,9 +31,10 @@ public class SponsorsAdapter extends BaseAdapter {
             R.mipmap.sponsors_rollibooks,  R.mipmap.sponsors_soultree,
             R.mipmap.sponsors_tarapress,  R.mipmap.sponsors_tearoha,
             R.mipmap.sponsors_theclaridges,  R.mipmap.sponsors_theluxecafe,
-            R.mipmap.sponsors_umwomen,  R.mipmap.sponsors_uttarakhand,
+            R.mipmap.sponsors_umwomen,
             R.mipmap.sponsors_vintage31,
     };
+    private Context mContext;
 
     public SponsorsAdapter(Context c){
         mContext = c;
@@ -62,7 +61,7 @@ public class SponsorsAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(180, 180));
+            imageView.setLayoutParams(new GridView.LayoutParams(200, 200));
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageView.setPadding(1, 1, 1, 1);
         } else {

@@ -12,9 +12,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
@@ -110,7 +113,8 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
             public void onSuccess(LoginResult loginResult) {
                 userLocalStore.setUserLoggedIn(true);
                 startActivity(new Intent(LoginActivity.this, DrawerActivity.class));
-                Toast.makeText(LoginActivity.this, "WELCOME TO KLF", Toast.LENGTH_LONG).show();
+//                Toast.makeText(LoginActivity.this, "WELCOME TO KLF", Toast.LENGTH_LONG).show();
+                toast();
                 finish();
             }
 
@@ -134,7 +138,7 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
     public void onConnectionFailed(ConnectionResult connectionResult) {
         if (!connectionResult.hasResolution()) {
 
-        //   GooglePlayServicesUtil.getErrorDialog(connectionResult.getErrorCode(), this, 0).show();
+            //   GooglePlayServicesUtil.getErrorDialog(connectionResult.getErrorCode(), this, 0).show();
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
             builder.setTitle("Please Try Again..");
             builder.setMessage("NETWORK ERROR!");
@@ -176,7 +180,7 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
         if (mConnectionResult.hasResolution()) {
 
             try {
-               mIsResolving = true;
+                mIsResolving = true;
                 mConnectionResult.startResolutionForResult(this, RC_SIGN_IN);
 
             } catch (IntentSender.SendIntentException e) {
@@ -193,7 +197,8 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
         startActivity(new Intent(LoginActivity.this, DrawerActivity.class));
         finish();
         getProfileInformation();
-        Toast.makeText(LoginActivity.this,"WELCOME TO KLF",Toast.LENGTH_LONG).show();
+//        Toast.makeText(LoginActivity.this,"WELCOME TO KLF",Toast.LENGTH_LONG).show();
+toast();
         userLocalStore.setUserLoggedIn(true);
     }
 
@@ -207,21 +212,21 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
         }
     }
 
-        @Override
-        public void onConnectionSuspended ( int i){
-            mGoogleApiClient.connect();
-        }
+    @Override
+    public void onConnectionSuspended ( int i){
+        mGoogleApiClient.connect();
+    }
 
-        @Override
-        public void onClick (View v){
-            if (v.getId() == R.id.sign_in_button) {
-                if (mGoogleApiClient.isConnected()) {
-                    Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
-                    mGoogleApiClient.disconnect();
-                }
-                onSignInClicked();
+    @Override
+    public void onClick (View v){
+        if (v.getId() == R.id.sign_in_button) {
+            if (mGoogleApiClient.isConnected()) {
+                Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
+                mGoogleApiClient.disconnect();
             }
+            onSignInClicked();
         }
+    }
 
     public void onSignInClicked() {
 
@@ -241,9 +246,9 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
 
     private void googlePlusLogout(){
         if (mGoogleApiClient.isConnected()){
-        Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
-        mGoogleApiClient.disconnect();
-         }
+            Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
+            mGoogleApiClient.disconnect();
+        }
     }
 
 
@@ -267,7 +272,8 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
             //mGoogleApiClient.connect();
             Intent intent = new Intent(LoginActivity.this, DrawerActivity.class);
             startActivity(intent);
-            Toast.makeText(LoginActivity.this, "WELCOME TO KLF", Toast.LENGTH_LONG).show();
+//            Toast.makeText(LoginActivity.this, "WELCOME TO KLF", Toast.LENGTH_LONG).show();
+            toast();
             finish();
         }
     }
@@ -295,7 +301,7 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-               LoginActivity.super.onBackPressed();
+                LoginActivity.super.onBackPressed();
 
             }
         });
@@ -413,4 +419,31 @@ public class LoginActivity extends Activity implements GoogleApiClient.Connectio
         return status;
 
     }
+
+    public void toast(){
+
+
+        //get the LayoutInflater and inflate the custom_toast layout
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
+                findViewById(R.id.toast_layout_root));
+
+        //get the TextView from the custom_toast layout
+        TextView text = (TextView) layout.findViewById(R.id.toastText);
+        text.setText("WELCOME TO KLF");
+
+        //create the toast object, set display duration,
+        //set the view as layout that's inflated above and then call show()
+        Toast t = new Toast(getApplicationContext());
+        t.setDuration(Toast.LENGTH_LONG);
+        t.setView(layout);
+        t.show();
+    }
+  public void  signOutFromGPlus(){
+      if (mGoogleApiClient.isConnected()) {
+
+          mGoogleApiClient.disconnect();
+          mGoogleApiClient.connect();
+      }
+  }
 }

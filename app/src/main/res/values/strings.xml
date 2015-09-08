@@ -7,6 +7,31 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
         <string name="desc_mini">KLF will be a literary festival unlike any other; one that will raise the bar and set high standards for the long-term benefit of the literary field; one that will be looked upon as an institution in itself.
                             Set out in the following paragraphs is its key aims and aspirations.</string>
+
+
+    <string name="tips">Travel Tips
+Packing your suitcase
+Finally, please remember to include the following in your suitcase:
+Clothes and Shoes:
+Trek shoes.
+Winter offers beautiful blue skies and spectacularly clear views of the snow capped Himalayas. The sun is strong during the day but morning and evenings are cold and temperature can drop to 10 -12 degree Celsius. Snowfall does not occur in October. Mornings and evenings can be chilly, during the initial bit, so do carry a jumper or wind-cheater.
+Light comfy clothes and closed walking shoes for the day as hill properties are a bit of a walking experience
+A hat
+Pocket Umbrella
+Sunglasses
+Sunblock
+For the evenings something a notch or two up from the day. And, there can be a nip in the air.
+No heels!
+Equipment:
+The mountains are absolutel crisp and clear, teh Himalayan Ranges in full view, the birds in large flocks visit us this time of the year, and the light can be wonderful so carry a camera!
+We provide binoculars but feel free to carry a pair if you have one.
+Other things:
+While a doctor would be accessible, you are advised to carry your regular medicines, as they may not be available with small chemist shops in and around Dhanachuli.
+Feel free to carry your favourite wine or whisky. The mountain shops sell limited brands of alcohol.
+Mosquitoes are rare but do carry a repellent with you just in case.
+More importantly, please try and leave the following behind:
+Watch. Let the time stop.
+City life. Give it a rest</string>
     <string name="home">Home</string>
     <string name="itinerary">Itinerary</string>
     <string name="speakers">Speakers</string>
@@ -14,7 +39,7 @@
     <string name="question">Question</string>
     <string name="picture">Picture Gallery</string>
     <string name="sponsors">Sponsors</string>
-    <string name="facebook_app_id">106202256400127</string>
+    <string name="facebook_app_id">608776275930200</string>
 
     <string name="speak1_name">Abha Iyengar</string>
     <string name="speak2_name">Aditya Bal</string>
@@ -26,6 +51,12 @@
     <string name="speak8_name">Amit Shankar</string>
     <string name="speak9_name">Aanchal Malhotra</string>
     <string name="speak10_name">Anuja Chauhan</string>
+    <string name="info_dhana"> There are many hotels and home stays around Dhanachuli within driving distance of 15 to 60 minutes from Te Aroha. Many of these are located in and around Sargakhet and Mukteshwar, a mere 15-20 minutes drive away from Te Aroha.
+        There are many hotels within walking distance from Abbotsford in Nainital.
+    The organisers will provide shuttle service from Mukteshwar and Sargakhet.
+
+    The organisers have negotiated special rates with some of these hotels around Dhanachuli.
+    </string>
 
 
 

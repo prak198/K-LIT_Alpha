@@ -1,7 +1,6 @@
 
 package com.example.iidea8.k_lit;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -15,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -34,9 +34,8 @@ import java.util.HashMap;
 public class ListviewActivity extends Fragment {
 
     ListView listView;
-    private View view;
-
     ArrayList<HashMap<String, String>> arrList;
+    private View view;
 
     @Nullable
     @Override
@@ -47,8 +46,9 @@ public class ListviewActivity extends Fragment {
 
         if (!isNetworkOnline()==true)
         {
-            Toast.makeText(getActivity(), "No Network Connection For Feeds",
-                    Toast.LENGTH_LONG).show();
+//            Toast.makeText(getActivity(), "No Network Connection For Feeds",
+//                    Toast.LENGTH_LONG).show();
+            toast();
         }
 
         listView = (ListView) view.findViewById(R.id.listview);
@@ -139,5 +139,25 @@ public class ListviewActivity extends Fragment {
         }
         return status;
 
+    }
+
+    public void toast() {
+
+
+        //get the LayoutInflater and inflate the custom_toast layout
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
+                view.findViewById(R.id.toast_layout_root));
+
+        //get the TextView from the custom_toast layout
+        TextView text = (TextView) layout.findViewById(R.id.toastText);
+        text.setText("No Network Connection For Feeds");
+
+        //create the toast object, set display duration,
+        //set the view as layout that's inflated above and then call show()
+        Toast t = new Toast(getActivity());
+        t.setDuration(Toast.LENGTH_LONG);
+        t.setView(layout);
+        t.show();
     }
 }

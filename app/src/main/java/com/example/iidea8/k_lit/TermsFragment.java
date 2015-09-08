@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -29,8 +29,9 @@ public class TermsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!isNetworkOnline()==true) {
-                    Toast.makeText(getActivity(), "Contest Require Net Connection",
-                            Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getActivity(), "Contest Require Net Connection",
+//                            Toast.LENGTH_LONG).show();
+                    toast();
 
                 }
                 else
@@ -68,6 +69,26 @@ public class TermsFragment extends Fragment {
         }
         return status;
 
+    }
+
+    public void toast() {
+
+
+        //get the LayoutInflater and inflate the custom_toast layout
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
+                view.findViewById(R.id.toast_layout_root));
+
+        //get the TextView from the custom_toast layout
+        TextView text = (TextView) layout.findViewById(R.id.toastText);
+        text.setText("Contest Require Net Connection");
+
+        //create the toast object, set display duration,
+        //set the view as layout that's inflated above and then call show()
+        Toast t = new Toast(getActivity());
+        t.setDuration(Toast.LENGTH_LONG);
+        t.setView(layout);
+        t.show();
     }
 }
 
