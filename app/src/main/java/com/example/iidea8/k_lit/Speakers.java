@@ -47,7 +47,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.speaker3_advaita_kala);
         speakersBio.setSpeakerName("Advaita Kala");
-        speakersBio.setSpeakerBio("A critical and commercial success, Advaita shot to fame with her witty classic, Almost Single.A hotelier by profession she is also the literary brain behind Sujoy Gosh’s much acclaimed Kahani.");
+        speakersBio.setSpeakerBio("A critical and commercial success, Advaita shot to fame with her witty classic, Almost Single.A hotelier by profession , she is also the literary brain behind Sujoy Gosh’s much acclaimed Kahani.");
         speakersBioArrayList.add(speakersBio);
 
         speakersBio = new SpeakersBio();
@@ -59,7 +59,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.speaker5_akshay_manwani);
         speakersBio.setSpeakerName("Akshay Manwani");
-        speakersBio.setSpeakerBio("Having chucked away the corporate life, Akshay found his calling in literature.His first book Sahir Ludhianivi: A People’s Poet, was published by Harper Collins in 2013,and he is currently working on his third book on Nasir Hussain.");
+        speakersBio.setSpeakerBio("Having chucked away the corporate life, Akshay found his calling in literature. His first book Sahir Ludhianivi: A People’s Poet, was published by Harper Collins in 2013,and he is currently working on his third book on Nasir Hussain.");
         speakersBioArrayList.add(speakersBio);
 
         speakersBio = new SpeakersBio();
@@ -71,7 +71,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.speaker7_ameena_saiyid);
         speakersBio.setSpeakerName("Ameena Saiyid");
-        speakersBio.setSpeakerBio("She is the managing director of Oxford University Press in Pakistan and the founder of Karachi Literature Festival and Islamabad Literature Festival. In 2010, she became the first woman to be elected president of the 150-year-old Overseas Investors Chamber of Commerce and Industry (OICCI).");
+        speakersBio.setSpeakerBio("She is the Managing Director of Oxford University Press in Pakistan and the founder of Karachi Literature Festival and Islamabad Literature Festival. In 2010, she became the first woman to be elected president of the 150-year-old Overseas Investors Chamber of Commerce and Industry (OICCI).");
         speakersBioArrayList.add(speakersBio);
 
         speakersBio = new SpeakersBio();
@@ -89,7 +89,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.speaker10_anuja_chauhan);
         speakersBio.setSpeakerName("Anuja Chauhan");
-        speakersBio.setSpeakerBio("She is often described as 'the best writer of the Indian commercial fiction genre\".As a writer, she is best known for her best-selling contemporary 'rom-com' novels, The Zoya Factor, Battle For Bittora, Those Pricey Thakur Girls and The House That BJ Built.");
+        speakersBio.setSpeakerBio("She is often described as \"the best writer of the Indian commercial fiction genre\".As a writer, she is best known for her best-selling contemporary 'rom-com' novels, The Zoya Factor, Battle For Bittora, Those Pricey Thakur Girls and The House That BJ Built.");
         speakersBioArrayList.add(speakersBio);
 
         speakersBio = new SpeakersBio();
@@ -120,11 +120,7 @@ public class Speakers extends Fragment {
                 speakersBioArrayList.add(speakersBio);
 
 
-        speakersBio = new SpeakersBio();
-        speakersBio.setSpeakerPhoto(R.mipmap.binalakshmi_nepram);
-        speakersBio.setSpeakerName("Binalakshmi Nepram ");
-                speakersBio.setSpeakerBio("She is a writer-activist, spearheading work on making disarmament a movement. She has authored many books, \" South Asia's Fractured Frontier: Armed Conflict, Narcotics and Small Arms Proliferation in India's Northeast\" being foremost. ");
-        speakersBioArrayList.add(speakersBio);
+
 
 
 
@@ -162,7 +158,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.deepti_pant);
         speakersBio.setSpeakerName("Deepti Pant ");
-                speakersBio.setSpeakerBio("Deepti is creative storyteller who is actively engaged in reviving the lost art of storytelling, her inspiration is mostly from the rich mythological and historical text. ");
+                speakersBio.setSpeakerBio("Deepti is Creative Storyteller who is actively engaged in reviving the lost art of storytelling, her inspiration is mostly from the rich mythological and historical text. ");
                         speakersBioArrayList.add(speakersBio);
 
 
@@ -218,7 +214,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.geet_chaturvedi);
         speakersBio.setSpeakerName("Geet  Chaturvedi");
-        speakersBio.setSpeakerBio("He is a Hindi poet and novelist, and was termed one of the 'Ten Best Writers' of India by the English Daily Indian Express in 2011. His poems have been translated into eight languages. ");
+        speakersBio.setSpeakerBio("He is a Hindi poet and novelist, and was termed one of the 'Ten Best Writers' of India by the English daily Indian Express in 2011. His poems have been translated into eight languages. ");
         speakersBioArrayList.add(speakersBio);
 
 
@@ -232,7 +228,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.jane_gill);
         speakersBio.setSpeakerName("Jane Gill");
-        speakersBio.setSpeakerBio("Jane is an English author, her debut novel Dance with Fireflies is based upon the life her Anglo-Indian grandmother who was a prolific letter writer. Jane is currently working on the sequel to Dance with Fireflies.");
+        speakersBio.setSpeakerBio("Jane is an English author, her debut novel Dance with Fireflies is based upon the life of her Anglo-Indian grandmother who was a prolific letter writer. Jane is currently working on the sequel to Dance with Fireflies.");
         speakersBioArrayList.add(speakersBio);
 
 
@@ -246,7 +242,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.jeroninio_almeida);
         speakersBio.setSpeakerName("Jeronimo Almeida ");
-        speakersBio.setSpeakerBio("Jerry as he is affectionately called is a Motivational  Speaker. He is much acclaimed as \"the moJOshInspirator\" and \"Karma Guru for his leadership coaching or THE HERO IN ME .");
+        speakersBio.setSpeakerBio("Jerry as he is affectionately called is a Motivational  Speaker. He is much acclaimed as \"the moJOshInspirator\" and \"Karma  Guru for his leadership coaching or THE HERO IN ME .");
         speakersBioArrayList.add(speakersBio);
 
 
@@ -260,7 +256,7 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.kanza_javed);
         speakersBio.setSpeakerName("Kanza Javed");
-        speakersBio.setSpeakerBio("Kanza is a young Pakistani writer, her \" Ashes, Wine and Dust\" was short-listed for Tibor Jones South Asia Prize 2013, making her at the age of twenty-one, the youngest and the only Pakistani writer to do so.   ");
+        speakersBio.setSpeakerBio("Kanza is a young Pakistani writer, her \"Ashes, Wine and Dust\" was short-listed for Tibor Jones South Asia Prize 2013, making her at the age of twenty-one, the youngest and the only Pakistani writer to do so.   ");
                 speakersBioArrayList.add(speakersBio);
 
 
@@ -351,7 +347,7 @@ public class Speakers extends Fragment {
         speakersBio.setSpeakerPhoto(R.mipmap.maya_mirchandani);
 
         speakersBio.setSpeakerName("Maya Mirchandani ");
-        speakersBio.setSpeakerBio("Maya is Senior Editor, Foreign Affairs Editor and a Senior Anchor at NDTV. In a career spanning two decades she has reported on a range of issues-from environment to crime, from national politics to human rights and conflict to her real forte, world affairs. ");
+        speakersBio.setSpeakerBio("Maya is Senior Editor, Foreign Affairs Editor and a Senior Anchor at NDTV. In a career spanning two decades , she has reported on a range of issues-from environment to crime, from national politics to human rights and conflict to her real forte, world affairs. ");
                 speakersBioArrayList.add(speakersBio);
 
 
@@ -372,7 +368,14 @@ public class Speakers extends Fragment {
         speakersBio = new SpeakersBio();
         speakersBio.setSpeakerPhoto(R.mipmap.mrinal_pande);
         speakersBio.setSpeakerName("Dr. Mrinal Pande ");
-                speakersBio.setSpeakerBio("Dr. Pande is a writer, columnist, broadcaster and television presenter.  She was the editor of the popular women's magazine Vama from 1984-87. She is the executive editor of the Hindi daily Hindustan. She writes in both Hindi and English. "); speakersBioArrayList.add(speakersBio);
+                speakersBio.setSpeakerBio("Dr. Pande is a writer, columnist, broadcaster and television presenter.  She was the editor of the popular women's magazine Vama from 1984-87. She is the executive editor of the Hindi daily Hindustan. She writes in both Hindi and English. ");
+        speakersBioArrayList.add(speakersBio);
+
+        speakersBio = new SpeakersBio();
+        speakersBio.setSpeakerPhoto(R.mipmap.mona);
+        speakersBio.setSpeakerName("Mona Verma ");
+        speakersBio.setSpeakerBio("Recipient of the Uttarakhand Ratna 2014, Haridwar based writer Mona is the author of three acclaimed works of fiction 'A Bridge to Nowhere', 'God is a River…a story of faith', and 'The White Shadow.'");
+        speakersBioArrayList.add(speakersBio);
 
 
         speakersBio = new SpeakersBio();

@@ -231,8 +231,10 @@ public class DrawerActivity extends ActionBarActivity {
 
                 case 7:
                     getFragmentManager().beginTransaction()
-                            .replace(R.id.frame_layout, new MoreFragment()).addToBackStack("mor").commit();
-                    break;
+                            .replace(R.id.frame_layout, new fragmentaddmore()).addToBackStack("mor").commit();
+//                    Intent intent2 = new Intent(DrawerActivity.this, fragmentaddmore.class);
+//                    startActivity(intent2);
+                   break;
 
                 case 8:
                     Intent intent = new Intent(DrawerActivity.this, LogoutActivity.class);

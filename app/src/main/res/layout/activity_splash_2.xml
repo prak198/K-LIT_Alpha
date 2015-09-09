@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvSponsors"
+
         android:id="@+id/rlSponsors"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
@@ -21,14 +21,14 @@
             android:layout_height="90dp"
             android:layout_marginLeft="3dp"
             android:layout_marginStart="3dp"
-            android:src="@mipmap/sponsors_israelembassy" />
+            android:src="@drawable/splashtwo" />
 
         <ImageView
             android:id="@+id/tvSponsors2"
             android:layout_width="140dp"
             android:layout_height="90dp"
             android:layout_centerHorizontal="true"
-            android:src="@mipmap/sponsors_kingfisher" />
+            android:src="@drawable/splashtwo2"/>
 
         <ImageView
             android:id="@+id/tvSponsors3"
@@ -38,7 +38,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginEnd="3dp"
             android:layout_marginRight="3dp"
-            android:src="@mipmap/sponsors_cafeflashback" />
+            android:src="@drawable/splashtwo3" />
 
         <ImageView
             android:id="@+id/tvSponsors4"
@@ -48,7 +48,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="70dp"
-            android:src="@mipmap/sponsors_digitalmediadigital" />
+            android:src="@drawable/splashtwo4" />
 
         <ImageView
             android:id="@+id/tvSponsors5"
@@ -60,7 +60,7 @@
             android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginTop="70dp"
-            android:src="@mipmap/sponsors_cafechica" />
+            android:src="@drawable/spalshtwop" />
 
     </RelativeLayout>
 

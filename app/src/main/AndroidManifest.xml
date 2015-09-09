@@ -40,6 +40,10 @@
             android:theme="@style/AppThemeFullScreen">
         </activity>
         <activity
+            android:name=".fragmentaddmore"
+            android:theme="@style/AppThemeFullScreen">
+        </activity>
+        <activity
             android:name=".SplashActivity3"
             android:theme="@style/AppThemeFullScreen">
         </activity>

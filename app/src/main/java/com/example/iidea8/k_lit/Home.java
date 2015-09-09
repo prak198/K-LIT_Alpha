@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
 public class Home extends Fragment {
     View view;
-
+    TextView tvHomeDesc = (TextView) view.findViewById(R.id.tvHomeDesc);
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,15 +43,25 @@ public class Home extends Fragment {
 
             pb.setVisibility(View.INVISIBLE);
 
+          //cache
 
 
-        }else
+
+
+
+    }else
         {
             new HomeAsync().execute("http://iidea8.webuda.com/services/home_screen_service.php?home");
 
         }
+        button();
 
-Button button = (Button) view.findViewById(R.id.bt_login_ideaWebClick2);
+        return view;
+    }
+
+    public void button(){
+
+        Button button = (Button) view.findViewById(R.id.bt_login_ideaWebClick2);
 
 
 
@@ -70,8 +80,6 @@ Button button = (Button) view.findViewById(R.id.bt_login_ideaWebClick2);
 
             }
         });
-
-        return view;
     }
 
     @Override
@@ -158,7 +166,7 @@ Button button = (Button) view.findViewById(R.id.bt_login_ideaWebClick2);
 
         @Override
         protected void onPostExecute(String result) {
-            TextView tvHomeDesc = (TextView) view.findViewById(R.id.tvHomeDesc);
+
             tvHomeDesc.setText(result);
             pb.setVisibility(View.INVISIBLE);
             super.onPostExecute(result);
